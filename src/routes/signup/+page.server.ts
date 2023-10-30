@@ -1,3 +1,4 @@
+// src/routes/signup/+pageserver.ts
 import type { PageServerLoad, Actions } from './$types';
 import { fail, redirect } from '@sveltejs/kit';
 import { createUser } from '$lib/user.model';

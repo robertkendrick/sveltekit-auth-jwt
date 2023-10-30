@@ -1,3 +1,4 @@
+// src/routes/login/+page.svelte
 <script lang="ts">
 	import type { ActionData } from './$types';
 	import { enhance } from '$app/forms';

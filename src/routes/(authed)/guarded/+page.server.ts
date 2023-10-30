@@ -1,3 +1,4 @@
+// src/routes/(authed)/guarded/+page.server.ts
 // import type { Actions, PageServerLoad } from './$types';
 import type { Actions} from './$types';
 import { error, redirect } from '@sveltejs/kit';

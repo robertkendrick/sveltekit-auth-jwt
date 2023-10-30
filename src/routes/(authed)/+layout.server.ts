@@ -1,3 +1,4 @@
+// src/routes/(authed)/layout.server.ts
 import type { LayoutServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
 

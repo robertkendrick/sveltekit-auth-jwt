@@ -1,3 +1,4 @@
+// src/hooks.server.ts 
 import type { Handle } from '@sveltejs/kit';
 import { JWT_ACCESS_SECRET } from '$env/static/private';
 import jwt from 'jsonwebtoken';

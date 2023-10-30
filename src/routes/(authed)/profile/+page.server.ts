@@ -1,3 +1,4 @@
+// src/routes/(authed)/profile/+page.server.svelte
 import type { Actions} from './$types';
 import { error, redirect } from '@sveltejs/kit';
 

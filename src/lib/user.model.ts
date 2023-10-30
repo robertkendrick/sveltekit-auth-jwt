@@ -1,3 +1,4 @@
+// src/lib/user.model.ts
 import { JWT_ACCESS_SECRET } from '$env/static/private';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -68,5 +69,3 @@ const loginUser = async (email: string, password: string) => {
 
 	return { token };
 };
-
-export { createUser, loginUser };
