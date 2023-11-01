@@ -33,7 +33,7 @@ const createUser = async (email: string, password: string) => {
 			error: 'Something went wrong'
 		};
 	}
-};
+};	// end createUser
 
 const loginUser = async (email: string, password: string) => {
 	// Check if user exists
@@ -68,4 +68,6 @@ const loginUser = async (email: string, password: string) => {
 	});
 
 	return { token };
-};
+};	// end loginUser
+
+export { createUser, loginUser }

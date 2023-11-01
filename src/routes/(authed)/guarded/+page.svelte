@@ -5,6 +5,9 @@
 	export let data: PageData;
 
 	const { user } = data;
+	const {mockUsers} = data;
+
+	console.log('routes/(authed)/guarded/+page.svelte')
 </script>
 
 <svelte:head>
@@ -17,6 +20,9 @@
 		<p>This page is guarded and will only be accessible to authenticated users.</p>
 
 		<p>Hello {user.email}</p>
+		{#each mockUsers as theUser}
+			<p>{theUser.email} -- {theUser.passwd}</p>
+		{/each}
 	</div>
 
 	<form method="POST" action="?/logout">

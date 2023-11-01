@@ -6,6 +6,7 @@
 	export let data: PageData;
 
 	const { user } = data;
+	console.log('routes/(authed)/profile/+page.svelte')
 </script>
 
 <svelte:head>

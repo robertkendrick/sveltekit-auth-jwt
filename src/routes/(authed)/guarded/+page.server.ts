@@ -16,7 +16,31 @@ import { error, redirect } from '@sveltejs/kit';
 // 		user
 // 	};
 // };
+import type { PageServerLoad } from './$types';
+// import { loginUser } from '$lib/user.model';
 
+export const load: PageServerLoad = (event) => {
+	//const user = event.locals.user;
+
+	// if (user) {
+	// 	throw redirect(302, '/guarded');
+	// }
+	console.log('routes/(authed)/guarded/+pageserver.ts (LOAD)')
+	console.log('Fetched List of Users')
+	const mockUsers = [
+		{
+			email: 'ff@abc.com',
+			passwd: 'mypassword'
+		},
+		{
+			email: 'hh@abc.com',
+			passwd: 'aotherpassword'
+		}
+	]
+	return {mockUsers}
+};
+//-----------------------------------------------------------
+// action the logout
 export const actions: Actions = {
 	logout: async (event) => {
 		event.cookies.delete('AuthorizationToken');

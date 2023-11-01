@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import { db } from '$lib/db';
 
 const handle: Handle = async ({ event, resolve }) => {
+	console.log(`📣 NEW REQUEST IS BEING MADE FROM ${event.url.pathname}`)
+	console.log('hooks.server.ts')
 	const authCookie = event.cookies.get('AuthorizationToken');
 
 	if (authCookie) {
@@ -28,6 +30,7 @@ const handle: Handle = async ({ event, resolve }) => {
 				throw new Error('User not found');
 			}
 
+			// create a user objext (not really session object)
 			const sessionUser = {
 				id: user.id,
 				email: user.email
@@ -39,7 +42,10 @@ const handle: Handle = async ({ event, resolve }) => {
 		}
 	}
 
-	return await resolve(event);
+	// return await resolve(event);
+	const response = await resolve(event)
+	console.log(`🔥 THE PAGE IS READY, I'M SENDING THE RESPONSE`)
+	return response
 };
 
 export { handle };

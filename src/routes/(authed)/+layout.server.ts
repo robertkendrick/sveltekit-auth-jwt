@@ -5,6 +5,8 @@ import { error, redirect } from '@sveltejs/kit';
 
 // Just check if user is logged in. Else redirect to login page
 export const load: LayoutServerLoad = (event) => {
+	console.log('routes/(authed)/+layout.server.ts (LOAD - read user from events.locals.user)')
+	console.log('Auth Layout invoked')
 	const user = event.locals.user;
 
 	if (!user) {
