@@ -43,7 +43,7 @@ export const load: PageServerLoad = (event) => {
 // action the logout
 export const actions: Actions = {
 	logout: async (event) => {
-		/* @migration task: add path argument */ event.cookies.delete('AuthorizationToken');
+		/* @migration task: add path argument */ event.cookies.delete('AuthorizationToken', {path: '/'});
 
 		redirect(302, '/login');
 	}
