@@ -7,7 +7,7 @@ export const load: PageServerLoad = (event) => {
 	const user = event.locals.user;
 
 	if (user) {
-		throw redirect(302, '/guarded');
+		redirect(302, '/guarded');
 	}
 };
 
@@ -35,6 +35,6 @@ export const actions: Actions = {
 		}
 
 		// Redirect to the login page
-		throw redirect(302, '/login');
+		redirect(302, '/login');
 	}
 };

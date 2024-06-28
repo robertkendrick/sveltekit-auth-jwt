@@ -10,7 +10,7 @@ export const load: LayoutServerLoad = (event) => {
 	const user = event.locals.user;
 
 	if (!user) {
-        throw redirect(303, `/login?redirectTo=${event.url.pathname}`);
+        redirect(303, `/login?redirectTo=${event.url.pathname}`);
 
 		// throw error(401, {
 		// 	message: 'You must be logged in to view this page'

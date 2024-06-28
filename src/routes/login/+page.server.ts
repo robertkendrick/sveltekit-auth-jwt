@@ -7,7 +7,7 @@ export const load: PageServerLoad = (event) => {
 	const user = event.locals.user;
 
 	if (user) {
-		throw redirect(302, '/guarded');
+		redirect(302, '/guarded');
 	}
 };
 
@@ -40,6 +40,6 @@ export const actions: Actions = {
 			maxAge: 60 * 60 * 24 // 1 day
 		});
 
-		throw redirect(302, '/guarded');
+		redirect(302, '/guarded');
 	}
 };

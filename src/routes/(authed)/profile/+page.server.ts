@@ -6,8 +6,8 @@ console.log('routes/(authed)/profile/+page.server.ts (No LOAD function here)')
 
 export const actions: Actions = {
 	logout: async (event) => {
-		event.cookies.delete('AuthorizationToken');
+		/* @migration task: add path argument */ event.cookies.delete('AuthorizationToken');
 
-		throw redirect(302, '/login');
+		redirect(302, '/login');
 	}
 };
