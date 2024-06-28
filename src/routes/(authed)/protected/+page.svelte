@@ -7,12 +7,26 @@
 	export let data: PageData;
 
 	const { user } = data;
+	const { mockUsers } = data;
+	const { protPage } = data;
 	console.log('routes/(authed)/protected/+page.svelte')
 	console.log($page.data)
 </script>
 
 <svelte:head>
-	<title>User Profile page</title>
+	<title>Protected page</title>
 </svelte:head>
 
 <p>{user.email}</p>
+<div>
+	<li>{$page.data.user.email}</li>
+	<li>{$page.data.protPage}</li>
+	{#each $page.data.mockUsers as item}
+	<li>{item.email}  --  {item.passwd}</li>
+	{/each}
+</div>
+
+{#each mockUsers as theUser}
+  <p>{theUser.email} -- {theUser.passwd}</p>
+{/each}
+
