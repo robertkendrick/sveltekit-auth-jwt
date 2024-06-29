@@ -22,10 +22,10 @@ export const actions: Actions = {
 			});
 		}
 
-		const { email, password } = formData as { email: string; password: string };
+		const { email, password, name} = formData as { email: string; password: string; name: string };
 
 		// Create a new user
-		const { error } = await createUser(email, password);
+		const { error } = await createUser(email, password, name);
 
 		// If there was an error, return an invalid response
 		if (error) {

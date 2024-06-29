@@ -20,6 +20,11 @@
 		</div>
 
 		<div class="group">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" required />
+		</div>
+
+		<div class="group">
 			<label for="password">Password</label>
 			<input type="password" name="password" id="password" required />
 		</div>
