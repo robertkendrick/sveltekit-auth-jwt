@@ -18,7 +18,7 @@ datasource db {
   email     String   @unique
   password  String
   name      String
-  days      UserDays[]
+  days      UserDays?
 }
 
 model UserDays {
@@ -26,5 +26,5 @@ model UserDays {
   days        String
   specialDays String
   user        User    @relation(fields: [userid], references: [id])
-  userid      Int
+  userid      Int     @unique
 }
