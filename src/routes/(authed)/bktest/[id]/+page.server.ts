@@ -10,7 +10,7 @@ import {getUser, getUsers} from '$lib/usercal.model'
 // getCalUser(2)
 
 import type { PageServerLoad } from './$types';
-export async function load ({ params }) :Promise<PageServerLoad> {
+export async function load ({ params }) {
     console.log('params: ', params)
     // const pm: number = Number(params.id)
 	return await getUser(Number(params.id))

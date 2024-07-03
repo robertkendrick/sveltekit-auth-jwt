@@ -2,14 +2,15 @@
     import type { PageData } from './$types';
     export let data: PageData;
 
-    const {days} = data.calUser
+    const {calUser} = data
     console.log(data)
     // const osd = days.specialDays.split(',')
     // console.log(osd.length)
 </script>
 
-<p>{data.calUser[0].id} {data.calUser[0].email}</p>
-<p>{data.calUser[1].id} {data.calUser[1].email}</p>
+<p>{data.calUser[0].id} {data.calUser[0].email} {calUser[0].days?.days}</p>
+<p>{data.calUser[1].id} {data.calUser[1].email} {calUser[1].days?.days}</p>
+
 
 <!-- iterate thru array -->
 {#each data.calUser as user}

@@ -2,23 +2,22 @@
     import type { PageData } from './$types';
     export let data: PageData;
 
-    const {days} = data.calUser
+    const {calUser} = data
     // console.log(data)
-    const osd = days.specialDays.split(',')
+    let osd = calUser?.days?.specialDays.split(',')
+    if (osd === undefined) osd=['11','22']
     // console.log(osd.length)
 </script>
 
 <p>{data.user.email}</p>
-<p>{data.calUser}</p>
 
-<p></p>
 <p>{data.calUser?.id}</p>
 <p>{data.calUser?.password}</p>
 <p>{data.calUser?.days?.days}</p>
 <p>{data.calUser?.days?.specialDays}</p>
 
-<p>{days.days}</p>
-<p>{days.specialDays}</p>
+<p>{calUser?.days?.days}</p>
+<p>{calUser?.days?.specialDays}</p>
 
 <p>{osd[0]}</p>
 <p>{osd[1]}</p>
