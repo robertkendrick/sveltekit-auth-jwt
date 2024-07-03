@@ -2,7 +2,8 @@ import { db } from '$lib/db';
 
 
 const getUser = async (id: number) => {
-    const user = await db.user.findUnique({
+    
+    const calUser = await db.user.findUnique({
         where: {
             id
         },
@@ -10,11 +11,23 @@ const getUser = async (id: number) => {
             days: true,
           },
     })
-    console.dir(user, { depth: null })
-    return user
+
+    // console.dir('getUser(): ', calUser, { depth: null })
+    console.log('getUser(): ', calUser)
+    return {calUser}
 }
 
-export {getUser}
+async function getUsers() {
+    const calUser = await db.user.findMany({
+        include: {
+            days: true,
+        },
+    })
+    console.log('getUsers: ', calUser)
+    return {calUser}
+} 
+
+export {getUser, getUsers}
 
 // const createUser = async (email: string, password: string, name: string) => {
 // 	// Check if user exists

@@ -6,8 +6,8 @@ import jwt from 'jsonwebtoken';
 import { db } from '$lib/db';
 
 const handle: Handle = async ({ event, resolve }) => {
-	console.log(`📣 NEW REQUEST IS BEING MADE FROM ${event.url.pathname}`)
-	console.log('hooks.server.ts')
+	console.log(`hooks.server.ts: 📣 NEW REQUEST IS BEING MADE FROM ${event.url.pathname}`)
+	// console.log('hooks.server.ts')
 	const authCookie = event.cookies.get('AuthorizationToken');
 
 	if (authCookie) {

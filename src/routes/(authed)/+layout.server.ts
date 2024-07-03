@@ -8,6 +8,7 @@ export const load: LayoutServerLoad = (event) => {
 	console.log('routes/(authed)/+layout.server.ts (LOAD - read user from events.locals.user)')
 	console.log('Auth Layout invoked')
 	const user = event.locals.user;
+	console.log('(authed)/+layout.server: ', user)
 
 	if (!user) {
         redirect(303, `/login?redirectTo=${event.url.pathname}`);
